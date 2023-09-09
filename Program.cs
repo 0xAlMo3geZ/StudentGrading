@@ -1,13 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleApp1
+namespace StudentGrading
 {
     class Program
     {
-        public static void GradingScaling(decimal studentScore)
+        public static string GradingScaling(decimal studentScore)
         {
-
+            if (studentScore >= 90)
+            {
+                if (studentScore >= 97)
+                    return "A+";
+                else if (studentScore >= 93)
+                    return "A";
+                else
+                    return "A-";
+            }
+            else if (studentScore >= 80)
+            {
+                if (studentScore >= 87)
+                    return "B+";
+                else if (studentScore >= 83)
+                    return "B";
+                else
+                    return "B-";
+            }
+            else if (studentScore >= 70)
+            {
+                if (studentScore >= 77)
+                    return "C+";
+                else if (studentScore >= 73)
+                    return "C";
+                else
+                    return "C-";
+            }
+            else if (studentScore >= 60)
+            {
+                if (studentScore >= 67)
+                    return "D+";
+                else if (studentScore >= 63)
+                    return "D";
+                else
+                    return "D-";
+            }
+            else
+            {
+                return "F";
+            }
         }
 
         static void Main(string[] args)
@@ -68,16 +107,16 @@ namespace ConsoleApp1
                 jeongSum += item;
             }
 
-            decimal sophiaScore = (decimal)sophiaSum / currentAssignments;
-            decimal nicolasScore = (decimal)nicolasSum / currentAssignments;
-            decimal zahirahScore = (decimal)zahirahSum / currentAssignments;
-            decimal jeongScore = (decimal)jeongSum / currentAssignments;
+            decimal sophiastudentScore = (decimal)sophiaSum / currentAssignments;
+            decimal nicolasstudentScore = (decimal)nicolasSum / currentAssignments;
+            decimal zahirahstudentScore = (decimal)zahirahSum / currentAssignments;
+            decimal jeongstudentScore = (decimal)jeongSum / currentAssignments;
 
             Console.WriteLine("Student\t\tGrade\n");
-            Console.WriteLine("Sophia:\t\t" + sophiaScore + "\t" + GradingScaling(sophiaScore));
-            Console.WriteLine("Nicolas:\t" + nicolasScore + "\t" + GradingScaling(nicolasScore));
-            Console.WriteLine("Zahirah:\t" + zahirahScore + "\t" + GradingScaling(zahirahScore));
-            Console.WriteLine("Jeong:\t\t" + jeongScore + "\t" + GradingScaling(jeongScore));
+            Console.WriteLine("Sophia:\t\t" + sophiastudentScore + "\t" + GradingScaling(sophiastudentScore));
+            Console.WriteLine("Nicolas:\t" + nicolasstudentScore + "\t" + GradingScaling(nicolasstudentScore));
+            Console.WriteLine("Zahirah:\t" + zahirahstudentScore + "\t" + GradingScaling(zahirahstudentScore));
+            Console.WriteLine("Jeong:\t\t" + jeongstudentScore + "\t" + GradingScaling(jeongstudentScore));
         }
     }
 }
